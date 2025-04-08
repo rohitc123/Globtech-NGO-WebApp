@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Card</title>
+</head>
+<body>
+    <h1>Add New Card</h1>
+    
+	<div class="container py-5">
+	    <div class="row justify-content-center">
+	        <div class="col-md-8 col-lg-6">
+	            <div class="card shadow">
+	                <div class="card-header bg-primary text-white">
+	                    <h3 class="mb-0">Create programs</h3>
+	                </div>
+	                <div class="card-body">
+	                    <form th:action="@{/admin/save-card}" th:object="${card}" method="post" enctype="multipart/form-data">
+	                        <!-- Heading Field -->
+	                        <div class="mb-3">
+	                            <label for="heading" class="form-label fw-bold">Heading</label>
+	                            <input type="text" class="form-control" id="heading" th:field="*{heading}" required>
+	                        </div>
+
+	                        <!-- Image Upload -->
+	                        <div class="mb-3">
+	                            <label for="imageFile" class="form-label fw-bold">Card Image</label>
+	                            <input type="file" class="form-control" id="imageFile" name="imageFile" accept="image/*" required>
+	                            <div class="form-text">Upload a high-quality image for your card</div>
+	                        </div>
+
+	                        <!-- Description -->
+	                        <div class="mb-3">
+	                            <label for="description" class="form-label fw-bold">Description</label>
+	                            <textarea class="form-control" id="description" th:field="*{description}" rows="4" required></textarea>
+	                        </div>
+
+	                        <!-- Page URL -->
+	                        <div class="mb-4">
+	                            <label for="pageUrl" class="form-label fw-bold">Page URL</label>
+	                            <input type="text" class="form-control" id="pageUrl" th:field="*{pageUrl}" required>
+	                            <div class="form-text">Enter the destination URL for this card</div>
+	                        </div>
+
+	                        <!-- Submit Button -->
+	                        <div class="d-grid gap-2">
+	                            <button type="submit" class="btn btn-primary btn-lg">
+	                                <i class="bi bi-save me-2"></i> Save Card
+	                            </button>
+	                        </div>
+	                    </form>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</body>
+</html>
