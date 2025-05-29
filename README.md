@@ -31,7 +31,7 @@ A dynamic web application built for Globtech NGO using Spring Boot, Spring Secur
   - 📅 Events
   - 🖼️ Media Gallery
 - 🧩 Protected routes for admin only
-- 🌍 Mobile responsive using Bootstrap and Thymeleaf layouts
+  
 
 ---
 
